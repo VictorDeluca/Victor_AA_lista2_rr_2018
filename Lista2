@@ -35,6 +35,23 @@ são as diferentes posições do tabuleiro que o rei pode ocupar, arestas são p
 partir da posição atual. Note que um rei não pode se mover para uma casa que está em perigo. Como o rei se move apenas uma casa por
 vez, o grafo pode ser desenhado em um plano sem sobreposições.
 
+e)
+Não existe.
+
 f) 
 Grafo completo: Um grafo tal que todo elemento possua uma aresta que o liga a cada outro elemento do grafo.
-Exemplo: 
+Exemplo: Um video-game com um item chamado "mapa" que permite ao jogador acessar qualquer área do jogo a qualquer momento, a partir
+de qualquer área. Ou seja, toda localização (Área) do jogo possui uma aresta (O próprio mapa) que a liga a qualquer outra área do 
+jogo.
+
+Clique: Um subconjunto de vértices em um grafo, tal que este subconjunto forme um grafo completo.
+Exemplo: Um video-game com um item chamado "mapa" que permite ao jogador acessar algumas localizações do jogo, chamadas de
+"áreas iniciais", a qualquer momento e a partir de qualquer área. Em outras palavras, é possível chegar a qualquer área
+inicial a partir de qualquer área, incluindo as outras áreas iniciais. O conjunto de áreas iniciais forma um "clique".
+
+Grafo bipartido: Um grafo bipartido é um grafo cujos vértices podem ser subdivididos em dois conjuntos C1 e C2, tais que toda aresta
+conecte um elemento de C1 a um elemento de C2.
+Exemplo: Um conjunto de telepatas, onde alguns telepatas podem apenas enviar mensagens telepáticas e outros podem apenas receber
+mensagens. Podemos dividí-los nos conjuntos "Transmissor" e "Receptor", e toda aresta representando uma mensagem telepática entre
+telepatas terá de ocorrer entre um Transmissor e um Receptor.
+
