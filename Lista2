@@ -29,8 +29,11 @@ Exemplo: Interesses românticos. "u" pode estar apaixonado por "v", mas isso nã
 respeito de "u". Logo, "u" é apenas vizinho de "v".
 
 d)
-Grafo planar é um grafo que pode ser desenhado em um plano sem sobreposição de arestas. 
-Exemplo: 
+Grafo planar: Um grafo que pode ser desenhado em um plano sem sobreposição de arestas. 
+Exemplo: Um grafo que representa um tabuleiro de xadrez com um rei e várias peças adversárias que podem atacar este rei. Vértices
+são as diferentes posições do tabuleiro que o rei pode ocupar, arestas são posições que o rei pode alcançar em um movimento a
+partir da posição atual. Note que um rei não pode se mover para uma casa que está em perigo. Como o rei se move apenas uma casa por
+vez, o grafo pode ser desenhado em um plano sem sobreposições.
 
 f) 
 Grafo completo: Um grafo tal que todo elemento possua uma aresta que o liga a cada outro elemento do grafo.
