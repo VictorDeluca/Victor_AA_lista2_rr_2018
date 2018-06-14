@@ -1,1 +1,28 @@
 Soluções da lista de exercícios 2.
+
+2)
+a) 
+Grafo: Qualquer estrutura que possa ser representada por vértices e arestas que ligam estes vértices.
+Exemplo: Relações de amizade em uma rede social. Pessoas são vértices, relações de amizade são arestas.
+
+b) 
+Grafo conexo: Um grafo tal que, dados dois vértices (u,v), sempre exista um caminho para chegar a "v" a partir de "u".
+Exemplo: Uma rede de computadores que segue o modelo cliente-servidor. Assumindo que a rede esteja bem estruturada, sempre é
+possível enviar mensagens de um computador para o outro, utilizando o servidor como um intermediário. 
+
+Grafo acíclico: Um grafo tal que, dado qualquer vértice "u", nunca exista um caminho para chegar em "u" a partir de "u".
+Exemplo: Uma lista encadeada não-circular unidirecional. Um elemento apenas pode apontar para os elementos seguintes, ou seja,
+nunca é possível voltar a um elemento anterior. Em outras palavras, não podemos voltar a "u" percorrendo a lista.
+
+Grafo direcionado: Um grafo tal que, dados dois vértices (u,v), uma aresta ligando "u" a "v" não implique em uma aresta ligando 
+"v" a "u".
+Exemplo: Uma lista de dependências entre várias tarefas. Tarefas são vértices, dependências são arestas. O fato de uma tarefa "t1" 
+depender de uma tarefa "t2" não significa que "t2" dependa de "t1".
+
+c)
+Adjacência entre dois vértices (u,v) em um grafo indica que existe uma aresta ligando "u" a "v".
+Exemplo: 
+
+f) 
+Grafo completo: Um grafo tal que todo elemento possua uma aresta que o liga a todos os outros elementos do grafo.
+Exemplo: 
