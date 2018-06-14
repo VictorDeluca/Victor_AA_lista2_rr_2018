@@ -40,12 +40,12 @@ Não existe.
 
 f) 
 Grafo completo: Um grafo tal que todo elemento possua uma aresta que o liga a cada outro elemento do grafo.
-Exemplo: Um video-game com um item chamado "mapa" que permite ao jogador acessar qualquer área do jogo a qualquer momento, a partir
+Exemplo: Um videogame com um item chamado "mapa" que permite ao jogador acessar qualquer área do jogo a qualquer momento, a partir
 de qualquer área. Ou seja, toda localização (Área) do jogo possui uma aresta (O próprio mapa) que a liga a qualquer outra área do 
 jogo.
 
 Clique: Um subconjunto de vértices em um grafo, tal que este subconjunto forme um grafo completo.
-Exemplo: Um video-game com um item chamado "mapa" que permite ao jogador acessar algumas localizações do jogo, chamadas de
+Exemplo: Um videogame com um item chamado "mapa" que permite ao jogador acessar algumas localizações do jogo, chamadas de
 "áreas iniciais", a qualquer momento e a partir de qualquer área. Em outras palavras, é possível chegar a qualquer área
 inicial a partir de qualquer área, incluindo as outras áreas iniciais. O conjunto de áreas iniciais forma um "clique".
 
@@ -67,6 +67,9 @@ ligar os mesmos dois aeroportos.
 
 Digrafo: Um grafo direcionado, ou seja, dados dois vértices (u,v), a existência de uma aresta que ligue "u" a "v" não implica na
 existência de uma aresta que ligue "v" a "u".
-Exemplo: 
+Exemplo: Dado um conjunto de elementos e vulnerabilidades que cada um desses elementos possui (Fogo é vulnerável a água, gelo é
+vulnerável a fogo, mas fogo também é vulnerável a gelo), o grafo que representa os elementos como vértices e as relações de
+vulnerabilidade como arestas é um dígrafo. Por exemplo, o fogo é vulnerável à água, mas a água não é vulnerável ao fogo.
+
 
 
