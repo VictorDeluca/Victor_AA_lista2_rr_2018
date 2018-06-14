@@ -75,11 +75,25 @@ vulnerabilidade como arestas é um dígrafo. Por exemplo, o fogo é vulnerável 
 3)
 Matriz de adjacência:
 Dado um grafo com N vértices, uma matriz de adjacência é uma matriz N X N que contém o valor "true" na posição (i,j) da matriz
-se existir uma aresta que ligue o elemento "i" ao elemento "j", ou "false" caso contrário.
+se existir uma aresta que ligue o elemento "i" ao elemento "j", ou "false" caso contrário. Pode ser alterada para armazenar o
+custo da aresta que liga "i" a "j".
 Vantagens:
-Possível descobrir se existe uma aresta entre i e j em tempo constante. 
+- Possível descobrir se existe uma aresta entre "i" e "j" em tempo constante. 
+- Código mais simples e intuitivo, especialmente quando arestas com pesos diferentes estão envolvidas.
+
+Desvantagens:
+- Grande custo de espaço (N X N elementos, ou (N X N)/2 em um grafo não-dirigido).
+- Obter todos os vizinhos de um nó "i" pode ser muito mais custoso do que o necessário, em grafos esparsos.
 
 
 Lista de adjacência:
 Dado um grafo com N vértices, uma lista de adjacência é um vetor de listas encadeadas (Que podem ser implementadas como um vector,
 para simplificar), onde cada elemento "j" da lista de posição "i" indica que há uma aresta que ligue o elemento "i" ao elemento "j".
+Vantagens:
+- Custo de armazenamento se reduz a O(E), onde E é o número de arestas no grafo. Invariavelmente menor ou igual ao custo de armazenar
+uma matriz de adjacência.
+- Obter todos os vizinhos de um nó "i" é uma operação eficiente, sem percorrer elementos desnecessários.
+
+Desvantagens:
+- Descobrir se existe uma aresta entre "i" e "j" pode ser tão custoso quanto obter todos os vizinhos de "i".
+- Código pode se tornar relativamente complexo.
