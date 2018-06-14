@@ -55,3 +55,18 @@ Exemplo: Um conjunto de telepatas, onde alguns telepatas podem apenas enviar men
 mensagens. Podemos dividí-los nos conjuntos "Transmissor" e "Receptor", e toda aresta representando uma mensagem telepática entre
 telepatas terá de ocorrer entre um Transmissor e um Receptor.
 
+g)
+Grafo simples: Um grafo tal que nenhum vértice "u" possua uma aresta que o ligue a si próprio, ou mais de uma aresta que o ligue
+a outro vértice "v".
+Exemplo: Relações de amizade em uma rede social. Não existem várias relações de amizade entre o mesmo par de pessoas, e nenhuma
+pessoa pode se tornar amiga dela própria.
+
+Multigrafo: Um grafo que pode possuir várias arestas que ligam um mesmo vértice "u" a um vértice "v" é um multigrafo.
+Exemplo: Um grafo representando conexões entre aeroportos. Diversos vôos, fornecidos por diversas linhas em diversos horários, podem
+ligar os mesmos dois aeroportos.
+
+Digrafo: Um grafo direcionado, ou seja, dados dois vértices (u,v), a existência de uma aresta que ligue "u" a "v" não implica na
+existência de uma aresta que ligue "v" a "u".
+Exemplo: 
+
+
