@@ -29,6 +29,8 @@ Exemplo: Interesses românticos. "u" pode estar apaixonado por "v", mas isso nã
 respeito de "u". Logo, "u" é apenas vizinho de "v".
 
 d)
+Grafo planar é um grafo que pode ser desenhado em um plano sem sobreposição de arestas. 
+Exemplo: 
 
 f) 
 Grafo completo: Um grafo tal que todo elemento possua uma aresta que o liga a cada outro elemento do grafo.
