@@ -72,4 +72,14 @@ vulnerável a fogo, mas fogo também é vulnerável a gelo), o grafo que represe
 vulnerabilidade como arestas é um dígrafo. Por exemplo, o fogo é vulnerável à água, mas a água não é vulnerável ao fogo.
 
 
+3)
+Matriz de adjacência:
+Dado um grafo com N vértices, uma matriz de adjacência é uma matriz N X N que contém o valor "true" na posição (i,j) da matriz
+se existir uma aresta que ligue o elemento "i" ao elemento "j", ou "false" caso contrário.
+Vantagens:
+Possível descobrir se existe uma aresta entre i e j em tempo constante. 
 
+
+Lista de adjacência:
+Dado um grafo com N vértices, uma lista de adjacência é um vetor de listas encadeadas (Que podem ser implementadas como um vector,
+para simplificar), onde cada elemento "j" da lista de posição "i" indica que há uma aresta que ligue o elemento "i" ao elemento "j".
