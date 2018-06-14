@@ -20,9 +20,16 @@ Exemplo: Uma lista de dependências entre várias tarefas. Tarefas são vértice
 depender de uma tarefa "t2" não significa que "t2" dependa de "t1".
 
 c)
-Adjacência entre dois vértices (u,v) em um grafo indica que existe uma aresta ligando "u" a "v".
-Exemplo: 
+Adjacência entre dois vértices (u,v) em um grafo indica que existe uma aresta ligando "u" a "v" e uma ligando "v" a "u".
+Exemplo: Dois amigos em uma rede social. A relação de amizade entre os dois amigos pode ser representada como uma aresta que os
+liga, ou seja, os amigos são adjacentes. Se "u" é amigo de "v", "v" é amigo de "u".
+
+Vizinhança, por outro lado, apenas indica que existe uma aresta ligando "u" a "v". Característica de grafos direcionados.
+Exemplo: Interesses românticos. "u" pode estar apaixonado por "v", mas isso não implica que "v" se sinta da mesma forma a
+respeito de "u". Logo, "u" é apenas vizinho de "v".
+
+d)
 
 f) 
-Grafo completo: Um grafo tal que todo elemento possua uma aresta que o liga a todos os outros elementos do grafo.
+Grafo completo: Um grafo tal que todo elemento possua uma aresta que o liga a cada outro elemento do grafo.
 Exemplo: 
