@@ -2,8 +2,9 @@ Soluções da lista de exercícios 2.
 
 1)
 a)
-O objetivo é encontrar o N-ésimo elemento da relação de recorrência F(0) = 1, F(1) = 1, F(N) = F(N-1) + F(N-2).
-Existem diversas soluções para este problema. As mais triviais são a versão recursiva e a versão iterativa por programação 
+O objetivo é encontrar o N-ésimo elemento da relação de recorrência F(0) = 1, F(1) = 1, F(N) = F(N-1) + F(N-2). Neste problema, não
+há diferenças entre o melhor, o pior e o caso médio.
+Existem múltiplas soluções para este problema. As mais triviais são a versão recursiva e a versão iterativa, que usa programação 
 dinâmica. 
 A versão recursiva simula a relação de recorrência, obtendo recursivamente F(N-1) e F(N-2), e então gerando F(N). Podemos calcular
 sua complexidade de duas formas. 
@@ -23,12 +24,37 @@ E fazendo K = N/2, temos:
 T(N) >= (2^(N/2))*T(0) + SOMATÓRIO(I=0, I <= (N/2 - 1), (2^I)) = (2^(N/2)) + SOMATÓRIO(I=0, I <= (N/2 - 1), (2^I)) = SOMATÓRIO(I=0, I<=N/2, (2^I)) = 2^(N/2 + 1) - 1
 T(N) >= O(2^(N/2))
 
-Logo, nosso upper bound é O(2^N) e nosso lower bound é Ω(2^(N/2)). Podemos 
-	 
+Logo, nosso upper bound é O(2^N) e nosso lower bound é Ω(2^(N/2)), que é equivalente a Ω(2^N). Logo, nosso algoritmo é Θ(2^N) também.
+
+
+A versão iterativa, por outro lado, computa a fórmula linearmente, executando uma única operação N vezes. Temos:
+T(N) = 2 + SOMATÓRIO(I=3, I <= N; 1) = 2 + (N-2)*1 = N-2+2 = N
+Logo, T(N) = O(N).
+
+
+Um algoritmo mais eficiente reescreve a relação de recorrência sob a forma de uma matriz, declarando que:
+F(N) = [1 1] * M^N, onde M = [0 1]
+                             [1 1]
+
+Utilizando esta fórmula, podemos calcular M^N usando exponenciação de matrizes. O custo de obter M * M com duas matrizes 2 X 2 é de 2^3 = 8, ou seja,
+constante. Sendo assim, nossa fórmula de recorrência segue abaixo:
+T(1) = 1
+T(N) = T(N/2) + c
+
+Expandindo, temos:
+T(K) = T(N/(2^k)) + k*c
+Fazendo K = log(N):
+T(N) = T(N/2^(log(N))) + log(N)*c = T(N/N) + log(N)*c = 1 + log(N)*c
+Logo:
+T(N) = O(log(N))
+
+Esta solução pode ser adaptada para resolver as mais diversas relações de recorrência lineares em tempo logarítmico.
 
 
 
 b)
+
+
 
 
 
