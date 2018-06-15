@@ -73,10 +73,28 @@ vulnerabilidade como arestas é um dígrafo. Por exemplo, o fogo é vulnerável 
 
 
 3)
+O grafo representado nos exemplos pode ser encontrado em ex3_sample.png
+
+
+Matriz de incidência:
+Dado um grafo com N vértices e E arestas, uma matriz de incidência é uma matriz N X E onde a posição (i,j) da matriz indica
+se a aresta "j" liga o elemento "i" a algum outro. Como as colunas são arestas, cada coluna possui no máximo duas linhas marcadas
+em si. A princípio é uma representação extremamente ineficiente. No exemplo abaixo, -1 representa origem e +1 representa destino.
+
+Exemplo:
+-1  0  0 +1  0  0  0
++1 -1 +1  0  0  0  0
+ 0 +1 -1 -1 +1  0  0
+ 0  0  0  0 -1  0  0
+ 0  0  0  0  0 +1 -1
+ 0  0  0  0  0 -1 +1
+
+
+
 Matriz de adjacência:
 Dado um grafo com N vértices, uma matriz de adjacência é uma matriz N X N que contém o valor "true" na posição (i,j) da matriz
 se existir uma aresta que ligue o elemento "i" ao elemento "j", ou "false" caso contrário. Pode ser alterada para armazenar o
-custo da aresta que liga "i" a "j".
+custo da aresta que liga "i" a "j". No exemplo, "true" é representado por 0 e "false" por 1.
 Vantagens:
 - Possível descobrir se existe uma aresta entre "i" e "j" em tempo constante. 
 - Código mais simples e intuitivo, especialmente quando arestas com pesos diferentes estão envolvidas.
@@ -84,6 +102,14 @@ Vantagens:
 Desvantagens:
 - Grande custo de espaço (N X N elementos, ou (N X N)/2 em um grafo não-dirigido).
 - Obter todos os vizinhos de um nó "i" pode ser muito mais custoso do que o necessário, em grafos esparsos.
+
+Exemplo:
+0 0 1 0 0 0
+1 0 1 0 0 0
+0 1 0 1 0 0
+0 0 0 0 0 0
+0 0 0 0 0 1
+0 0 0 0 1 0
 
 
 Lista de adjacência:
@@ -97,3 +123,59 @@ uma matriz de adjacência.
 Desvantagens:
 - Descobrir se existe uma aresta entre "i" e "j" pode ser tão custoso quanto obter todos os vizinhos de "i".
 - Código pode se tornar relativamente complexo.
+
+Exemplo:
+1
+2
+0 1
+2
+5
+4
+
+
+
+4)
+
+
+
+5)
+a) 
+Enumeração explícita é uma técnica que busca testar todas as soluções possíveis para um problema, e dentre elas escolhe a melhor.
+Um exemplo de aplicação é resolver o problema do Caixeiro-Viajante, onde precisamos gerar o melhor caminho que visite todos os
+vértices de um grafo uma única vez, e volte para o vértice de origem. Podemos gerar todas as permutações de vértices possíveis,
+onde cada permutação é um caminho, e verificar qual delas gera a melhor solução.
+
+Enumeração implícita geralmente é associada à técnica de Branch-and-Bound, onde iniciamos com uma solução qualquer e então buscamos
+melhorar esta solução gerando todas as soluções que valham a pena explorar utilizando enumeração explícita. Uma solução que não vale 
+a pena enumerar é uma função que não tem qualquer chance de gerar uma solução ótima, comparada com a solução ótima que temos no momento.
+Um exemplo seria, novamente, resolver o problema do Caixeiro-Viajante, porém sem visitar qualquer solução que inclua um caminho (Não
+necessariamente contendo todos os elementos) de custo superior à nossa solução ótima.
+
+
+b) 
+Programação dinâmica é um paradigma que busca armazenar os resultados de operações que são feitas muitas vezes, de forma que elas só
+precisem ser executadas uma única vez. Pode ser aplicado em funções simples, como calcular Fib(N) em O(N), onde Fib(N) é o elemento
+da sequência de Fibonacci na posição N, ou em aplicações complexas, como obter o menor múltiplo de um valor K que possua alguns
+algarismos pré-definidos (Ou declarar que tal múltiplo não existe).
+Um exemplo de aplicação fácil de explicar é o caso do Subset Sum, onde armazenamos os valores que podem ser obtidos utilizando os
+elementos de 1 a i, até que i chegue a N. A complexidade, em geral, é o número de estados de nossa DP multiplicado pelo custo de
+realizar uma transição de um estado para o outro.
+
+
+c)
+Algoritmos gulosos/gananciosos seguem um paradigma que, ao invés de procurar uma solução ótima global, focam em encontrar uma solução
+ótima local, e esperam que esta seja ótima globalmente também. Algumas vezes eles sucedem, outras vezes não. Um exemplo de problema
+que pode ser resolvido com algoritmos gulosos é, dado um conjunto C, encontrar um subconjunto de tamanho K tal que o AND bitwise entre
+todos os elementos do conjunto seja maximizado.
+Para resolver este problema, simplesmente iteramos bit a bit e verificamos se existe algum conjunto de tamanho K que nos permite manter
+esse bit. Caso exista, reduzimos nosso conjunto aos elementos que possuem esse bit e prosseguimos. Naturalmente, começamos gulosamente
+pelo bit mais significativo. A melhor solução local para o subconjunto que possui o maior bit possível setado também será a melhor 
+solução global, pois qualquer solução que não possua esse bit gerará um resultado menor.
+
+
+d)
+Backtracking é uma técnica de força bruta que busca gerar todas as soluções possíveis assim como a enumeração explícita, porém excluindo
+imediatamente soluções de alguma forma inválidas. É similar ao branch-and-bound, porém apenas elimina soluções inválidas, não soluções
+inferiores à ótima. O problema Strings Binárias Triple-Free, de autoria de Rujia Liu, pode e deve ser resolvido por backtracking, pois
+existem muitas soluções inválidas que seriam visitadas se enumerássemos todas as 2^30 soluções possíveis para o pior caso. A descrição
+do problema pode ser encontrada em ex5_d_sample.png, disponível no mesmo repositório que este arquivo de texto.
