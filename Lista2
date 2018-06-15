@@ -2,6 +2,29 @@ Soluções da lista de exercícios 2.
 
 1)
 a)
+O objetivo é encontrar o N-ésimo elemento da relação de recorrência F(0) = 1, F(1) = 1, F(N) = F(N-1) + F(N-2).
+Existem diversas soluções para este problema. As mais triviais são a versão recursiva e a versão iterativa por programação 
+dinâmica. 
+A versão recursiva simula a relação de recorrência, obtendo recursivamente F(N-1) e F(N-2), e então gerando F(N). Podemos calcular
+sua complexidade de duas formas. 
+A primeira delas é expandindo a relação de recorrência. Para podermos expandir a relação com mais facilidade, vamos transformá-la
+em uma desigualdade, para gerar um upper bound. Subsequentemente, calcularemos um lower bound de forma similar.
+T(N) = T(N-1) + T(N-2) + 1 <= T(N-1) + T(N-1) + 1
+Logo, T(N) <= 2*T(N-1) + 1. 
+Logo, podemos escrever T(N) sob a notação Big O da seguinte forma:
+T(N) <= 2*T(N-1)
+T(N-1) <= 2*(2T*(N-2) + 1) + 1 = (2^2)*T(N-2) + 2 + 1
+T(K) <= (2^K)*T(N-K) + SOMATÓRIO(I=0, I<=K-1, (2^I))
+Fazendo K = N, temos T(N) <= (2^N)*T(0) + SOMATÓRIO(I=0, I<=N-1, (2^I)) = SOMATÓRIO(I=0, I<=N, (2^I)) = 2^(N+1) - 1
+Logo, T(N) <= O(2^N)
+De forma similar, podemos escrever T(N) >= T(N-2) + T(N-2) + 1, que gera:
+T(K) >= (2^K)*T(N-2*K) + SOMATÓRIO(I=0, I<=K-1, (2^I))
+E fazendo K = N/2, temos:
+T(N) >= (2^(N/2))*T(0) + SOMATÓRIO(I=0, I <= (N/2 - 1), (2^I)) = (2^(N/2)) + SOMATÓRIO(I=0, I <= (N/2 - 1), (2^I)) = SOMATÓRIO(I=0, I<=N/2, (2^I)) = 2^(N/2 + 1) - 1
+T(N) >= O(2^(N/2))
+
+Logo, nosso upper bound é O(2^N) e nosso lower bound é Ω(2^(N/2)). Podemos 
+	 
 
 
 
@@ -240,7 +263,9 @@ Caminho inexistente
 
 
 8)
-a)
+a) Dada uma fórmula booleana, o problema SAT consiste em determinar se existe uma atribuição às variáveis desta fórmula que
+tornem o resultado da fórmula "true". Note que as variáveis podem apenas receber "true" ou "false". A teoria da NP-completude
+é explicada em b), onde descrevemos as classes NP, NP-difícil e finalmente NP-Completa.
 
 
 b)
