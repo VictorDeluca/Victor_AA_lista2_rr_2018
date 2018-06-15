@@ -37,11 +37,15 @@ int main(){
 	pair<int,vector<int> > ans = solve((1<<from),from);
 	ans.second.push_back(from);
 
-	printf("Custo: %d\nCaminho: ",ans.first);
-	for(i=0;i<ans.second.size() - 1;i++){
-		printf("%d <- ",ans.second[i]+1);
+	if(ans.first == INF){
+		printf("Caminho inexistente\n");
+	} else{
+		printf("Custo: %d\nCaminho: ",ans.first);
+		for(i=0;i<ans.second.size() - 1;i++){
+			printf("%d <- ",ans.second[i]+1);
+		}
+		printf("%d\n",ans.second[i]+1);
 	}
-	printf("%d\n",ans.second[i]+1);
 
 	return 0;
 }
