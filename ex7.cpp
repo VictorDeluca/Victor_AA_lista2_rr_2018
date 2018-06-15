@@ -5,13 +5,13 @@ using namespace std;
 int v,e; int graph[10][10]; vector<int> empty;
 int from,to;
 
-pair<int,vector<int>> solve(int mask, int prev){
+pair<int,vector<int> > solve(int mask, int prev){
 	if(prev==to) return make_pair(0,empty);
 
-	int i,j; pair<int,vector<int>> ans = make_pair(INF,empty);
+	int i,j; pair<int,vector<int> > ans = make_pair(INF,empty);
 	for(i=0;i<v;i++){
 		if(!(mask&(1<<i)) && graph[prev][i]!=INF){
-			pair<int,vector<int>> helper = solve(mask|(1<<i),i);
+			pair<int,vector<int> > helper = solve(mask|(1<<i),i);
 			helper.first += graph[prev][i];
 			if(helper.first < ans.first){
 				ans = helper;
@@ -34,7 +34,7 @@ int main(){
 	}
 	scanf("%d%d",&from,&to); from--; to--;
 
-	pair<int,vector<int>> ans = solve((1<<from),from);
+	pair<int,vector<int> > ans = solve((1<<from),from);
 	ans.second.push_back(from);
 
 	printf("Custo: %d\nCaminho: ",ans.first);
