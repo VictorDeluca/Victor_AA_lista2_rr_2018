@@ -17,12 +17,12 @@ T(N) <= 2*T(N-1)
 T(N-1) <= 2*(2T*(N-2) + 1) + 1 = (2^2)*T(N-2) + 2 + 1
 T(K) <= (2^K)*T(N-K) + SOMATÓRIO(I=0, I<=K-1, (2^I))
 Fazendo K = N, temos T(N) <= (2^N)*T(0) + SOMATÓRIO(I=0, I<=N-1, (2^I)) = SOMATÓRIO(I=0, I<=N, (2^I)) = 2^(N+1) - 1
-Logo, T(N) <= O(2^N)
+Logo, T(N) = O(2^N)
 De forma similar, podemos escrever T(N) >= T(N-2) + T(N-2) + 1, que gera:
 T(K) >= (2^K)*T(N-2*K) + SOMATÓRIO(I=0, I<=K-1, (2^I))
 E fazendo K = N/2, temos:
 T(N) >= (2^(N/2))*T(0) + SOMATÓRIO(I=0, I <= (N/2 - 1), (2^I)) = (2^(N/2)) + SOMATÓRIO(I=0, I <= (N/2 - 1), (2^I)) = SOMATÓRIO(I=0, I<=N/2, (2^I)) = 2^(N/2 + 1) - 1
-T(N) >= O(2^(N/2))
+T(N) = Ω(2^(N/2))
 
 Logo, nosso upper bound é O(2^N) e nosso lower bound é Ω(2^(N/2)), que é equivalente a Ω(2^N). Logo, nosso algoritmo é Θ(2^N) também.
 
@@ -53,8 +53,25 @@ Esta solução pode ser adaptada para resolver as mais diversas relações de re
 
 
 b)
+O problema de gerar todas as permutações de um número se refere a gerar todas as permutações dos dígitos de um número N. É
+equivalente ao problema de gerar todas as permutações de um conjunto com N números. O algoritmo mais simples não se importa em
+gerar a mesma permutação várias vezes, simplesmente assumindo que todos os elementos são diferentes. O número de permutações
+será O(N!), e utilizando backtracking podemos computar todas elas em O(N!) também.
+T(1) = 1
+T(N) = N*T(N-1) + N
+Expandindo, tempos:
+T(N-1) = N*((N-1)*T(N-2) + (N-1)) + N = N*(N-1)*T(N-2) + N*(N-1) + N
+T(K) = N*(N-1)*...*K+1*T(K) + N*(N-1)*...*K+1 + N*(N-1)*...*K+2 + ... + N
 
+Fazendo K = 1:
+T(N) = N*(N-1)*...*1*T(1) + N*(N-1)*...*2 + ... + N
+T(N) = N! + N! + (N!)/(2!) + (N!)/(3!) + ... + (N!)/((N-1)!)
+T(N) = 2*N! + SOMATÓRIO (I=2, I <= N-1, N!/((N-I)!))
 
+SOMATÓRIO (I=2, I <= N-1, N!/((N-I)!)) tende a N! (Nunca alcançando N!), logo:
+T(N) <= 2*N! + N!
+T(N) <= 3*N!
+T(N) = O(N!)
 
 
 
