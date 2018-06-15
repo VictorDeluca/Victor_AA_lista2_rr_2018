@@ -240,3 +240,16 @@ Caminho inexistente
 
 
 8)
+a)
+
+
+b)
+Classe P: Problemas que podem ser resolvidos em tempo polinomial, ou seja, da forma O(n^k), onde k é uma constante. Um exemplo
+é o problema de buscar um elemento em um vetor não-ordenado, o que pode ser feito em O(n^1).
+
+Classe NP: Problemas cujas soluções são verificáveis em tempo polinomial, mas que não necessariamente são resolvidos também em
+tempo polinomial de forma determinística. Como a classe P está contida em NP, podemos usar o mesmo exemplo de buscar um elemento
+em um vetor não-ordenado. A complexidade ainda é O(N), polinomial. Além disso, podemos verificar a corretude da nossa solução
+também em tempo polinomial (O(N^0) = O(1), ou O(N^1) = O(N), dependendo da nossa implementação). Logo, o problema também é NP.
+
+Classe NP-Difícil: 
