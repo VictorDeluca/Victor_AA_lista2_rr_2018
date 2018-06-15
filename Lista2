@@ -2,7 +2,7 @@ Soluções da lista de exercícios 2.
 
 1)
 a)
-Existem três algoritmos disponíveis para calcular este 
+
 
 
 b)
@@ -252,4 +252,10 @@ tempo polinomial de forma determinística. Como a classe P está contida em NP, 
 em um vetor não-ordenado. A complexidade ainda é O(N), polinomial. Além disso, podemos verificar a corretude da nossa solução
 também em tempo polinomial (O(N^0) = O(1), ou O(N^1) = O(N), dependendo da nossa implementação). Logo, o problema também é NP.
 
-Classe NP-Difícil: 
+Classe NP-Difícil: Engloba os problemas PB tais que todo problema em NP possa ser reduzido a PB em tempo polinomial. Alguns deles
+nem sequer são decidíveis. Um exemplo é o problema da parada, onde é dada a descrição de um programa, e uma entrada para este
+programa, e deve-se decidir se o programa vai parar ou não para esta entrada.
+
+Classe NP-Completa: Engloba os problemas que estão em NP e que são NP-Difíceis ao mesmo tempo. Um exemplo é o problema do Subset
+Sum, onde é dada a descrição de um conjunto de valores e devemos descobrir se existe algum subconjunto deste conjunto cuja soma 
+resulte em um valor específico.
