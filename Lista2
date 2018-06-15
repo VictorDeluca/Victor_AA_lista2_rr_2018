@@ -1,5 +1,14 @@
 Soluções da lista de exercícios 2.
 
+1)
+a)
+Existem três algoritmos disponíveis para calcular este 
+
+
+b)
+
+
+
 2)
 a) 
 Grafo: Qualquer estrutura que possa ser representada por vértices e arestas que ligam estes vértices.
@@ -169,8 +178,8 @@ que pode ser resolvido com algoritmos gulosos é, dado um conjunto C, encontrar 
 todos os elementos do conjunto seja maximizado.
 Para resolver este problema, simplesmente iteramos bit a bit e verificamos se existe algum conjunto de tamanho K que nos permite manter
 esse bit. Caso exista, reduzimos nosso conjunto aos elementos que possuem esse bit e prosseguimos. Naturalmente, começamos gulosamente
-pelo bit mais significativo. A melhor solução local para o subconjunto que possui o maior bit possível setado também será a melhor 
-solução global, pois qualquer solução que não possua esse bit gerará um resultado menor.
+pelo bit mais significativo, terminando no menor bit. A melhor solução local para o subconjunto que possui o maior bit possível setado 
+também será a melhor solução global, pois qualquer solução que não possua esse bit gerará um AND menor.
 
 
 d)
@@ -179,3 +188,55 @@ imediatamente soluções de alguma forma inválidas. É similar ao branch-and-bo
 inferiores à ótima. O problema Strings Binárias Triple-Free, de autoria de Rujia Liu, pode e deve ser resolvido por backtracking, pois
 existem muitas soluções inválidas que seriam visitadas se enumerássemos todas as 2^30 soluções possíveis para o pior caso. A descrição
 do problema pode ser encontrada em ex5_d_sample.png, disponível no mesmo repositório que este arquivo de texto.
+
+
+
+7)
+Código-fonte disponível em "ex7.cpp". Para compilar, simplesmente execute o comando:
+g++ ex7.cpp
+Seguido do comando:
+./a.out
+Para abrir o executável resultante. Alternativamente, utilizar uma IDE como o Dev C++ também é possível.
+A entrada deve descrever um grafo e uma única consulta. O formato de entrada é descrito abaixo:
+V E
+S1 D1 C1
+S2 D2 C2
+...
+SE DE CE
+SQ DQ
+
+Onde V é o número de vértices, E é o número de arestas, e cada trio de inteiros nas linhas subsequentes representa uma aresta do grafo,
+onde Si é o vértice de origem da aresta, Di é o vértice de destino e Ci é o custo para se usar a aresta. Por fim, SQ e DQ representam
+a consulta desejada: A saída do programa será o caminho mais curto de SQ a DQ, além do custo deste caminho, ou "caminho inexistente"
+caso não exista um caminho entre SQ e DQ.
+Restrições:
+- O número de vértices não pode ser maior que 10.
+- Nenhum subconjunto de arestas deve possuir uma soma maior ou igual a 10^9 - 1.
+Um exemplo de entrada e saída para o algoritmo seguem abaixo:
+
+Entrada:
+3 5
+1 3 5
+1 2 1
+2 3 3
+3 1 4
+2 1 0
+1 3
+
+Saída:
+Custo: 4
+Caminho: 3 <- 2 <- 1
+
+Entrada:
+3 4
+1 3 5
+1 2 1
+2 3 3
+2 1 4
+3 1
+
+Saída:
+Caminho inexistente
+
+
+8)
