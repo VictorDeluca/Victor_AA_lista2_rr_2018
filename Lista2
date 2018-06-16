@@ -210,7 +210,50 @@ Exemplo:
 
 
 4)
+Tabelas Hash são estruturas de dados que buscam realizar as operações de busca, inserção e remoção de elementos em tempo constante,
+ou seja, O(1). Para tanto, é necessário que diferentes elementos sejam mapeados para diferentes posições da tabela Hash. Nem sempre
+isto é possível, e para grandes quantidades de elementos o Princípio da Casa dos Pombos prova que isso é até mesmo impossível para a
+busca e a remoção. Ainda assim, tabelas Hash possuem uma ótima performance em geral, especialmente quando a função hash é bem feita 
+e o número de elementos não é muito grande.
 
+Código-fonte disponível em "ex4.cpp". Para compilar, simplesmente execute o comando:
+g++ ex4.cpp
+Seguido do comando:
+./a.out
+Para abrir o executável resultante. Alternativamente, utilizar uma IDE como o Dev C++ também é possível.
+A entrada deve descrever um conjunto de valores a serem inseridos na tabela hash, e o tipo de tabela a ser usado. Segue abaixo o modelo
+de entrada a ser seguido:
+N T
+V1 V2 ... VN
+
+Onde N é o número de elementos, T é o tipo de tabela Hash (1 = Lista encadeada, 2 = Árvore rubro-negra) e Vi é um valor a ser inserido
+na tabela, para 1 <= i <= N. Para o hash de tipo 2, foi utilizada a estrutura set, que é uma implementação de árvore rubro-negra nativa
+da linguagem C++.
+
+
+Segue abaixo a análise do tempo de execução para diversas entradas. Todas as análises foram feitas analisando a média entre 5 execuções
+diferentes para a mesma entrada.
+
+10 valores
+lista: 0.010 ms
+tree: 0.016 ms
+
+100 valores
+lista: 0.015 ms
+tree: 0.037 ms
+
+1000 valores
+lista: 0.095 ms
+tree: 0.315 ms
+
+10000 valores
+lista: 0.629 ms
+tree: 2.411 ms
+
+Gráficos ilustrando a análise desses valores podem ser encontrados em "ex4_graph1.png" e "ex4_graph2.png", que representam respectivamente
+os tipos 1 e 2 de tabela Hash.
+Podemos notar que o custo de inserção na versão que utiliza árvores é muito mais alto. Isso ocorre porque a inserção pode ser feita em O(1)
+numa lista encadeada. A busca e a remoção, contudo, apresentam complexidades maiores, e provavelmente teriam uma performance muito pior.
 
 
 5)
