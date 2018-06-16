@@ -257,13 +257,54 @@ do problema pode ser encontrada em ex5_d_sample.png, disponível no mesmo reposi
 
 
 
+6)
+Código-fonte disponível em "ex6.cpp". Para compilar, simplesmente execute o comando:
+g++ ex6.cpp
+Seguido do comando:
+./a.out
+Para abrir o executável resultante. Alternativamente, utilizar uma IDE como o Dev C++ também é possível.
+A entrada deve descrever um conjunto de matrizes. Todos os dados devem ser inseridos pela entrada padrão (stdin). O formato de entrada
+é descrito abaixo:
+N
+R1 C1
+R2 C2
+...
+RN CN
+
+Onde N é o número de matrizes, e cada par Ri, Ci descreve uma matriz, sendo Ri o número de linhas e Ci o número de colunas. O algoritmo
+retorna o menor número de multiplicações necessárias para resolver a cadeia de multiplicações, ou avisa que não é possível multiplicar 
+a cadeia de matrizes na ordem descrita. É utilizada uma DP recursiva, portanto a memória é mais limitada. N não deverá ultrapassar 1000. 
+Exemplos de entrada e saída são dados abaixo:
+
+Entrada:
+4
+40 20 
+20 30 
+30 10
+10 30
+
+Saída:
+26000
+
+Entrada:
+4
+40 20 
+10 30 
+30 10
+10 30
+
+Saída:
+Impossível realizar multiplicações
+
+
 7)
 Código-fonte disponível em "ex7.cpp". Para compilar, simplesmente execute o comando:
 g++ ex7.cpp
 Seguido do comando:
 ./a.out
 Para abrir o executável resultante. Alternativamente, utilizar uma IDE como o Dev C++ também é possível.
-A entrada deve descrever um grafo e uma única consulta. O formato de entrada é descrito abaixo:
+A entrada deve descrever um grafo e uma única consulta. Todos os dados devem ser inseridos pela entrada padrão (stdin). O formato de 
+entrada é descrito abaixo:
 V E
 S1 D1 C1
 S2 D2 C2
@@ -278,7 +319,7 @@ caso não exista um caminho entre SQ e DQ.
 Restrições:
 - O número de vértices não pode ser maior que 10.
 - Nenhum subconjunto de arestas deve possuir uma soma maior ou igual a 10^9 - 1.
-Um exemplo de entrada e saída para o algoritmo seguem abaixo:
+Exemplos de entrada e saída para o algoritmo seguem abaixo:
 
 Entrada:
 3 5
