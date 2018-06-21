@@ -391,8 +391,8 @@ Caminho inexistente
 
 8)
 a) Dada uma fórmula booleana, o problema SAT consiste em determinar se existe uma atribuição às variáveis desta fórmula que
-tornem o resultado da fórmula "true". Note que as variáveis podem apenas receber "true" ou "false". A teoria da NP-completude
-é explicada em b), onde descrevemos as classes NP, NP-difícil e finalmente NP-Completa.
+tornem o resultado da fórmula "true". Note que as variáveis podem apenas receber "true" ou "false". Foi o primeiro problema a
+ser provado como NP-Completo, e é frequentemente utilizado para provar a NP-Completude de outros problemas.
 
 
 b)
