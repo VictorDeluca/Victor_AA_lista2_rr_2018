@@ -33,8 +33,8 @@ Logo, T(N) = O(N).
 
 
 Um algoritmo mais eficiente reescreve a relação de recorrência sob a forma de uma matriz, declarando que:
-F(N) = [1 1] * M^N, onde M = [0 1]
-                             [1 1]
+[ F(N) ] = [1 1] * M^N, onde M = [0 1]
+[F(N+1)]                         [1 1]
 
 Utilizando esta fórmula, podemos calcular M^N usando exponenciação de matrizes. O custo de obter M * M com duas matrizes 2 X 2 é de 2^3 = 8, ou seja,
 constante. Sendo assim, nossa fórmula de recorrência segue abaixo:
