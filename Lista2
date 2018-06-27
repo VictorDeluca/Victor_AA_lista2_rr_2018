@@ -413,3 +413,19 @@ programa, e deve-se decidir se o programa vai parar ou não para esta entrada.
 Classe NP-Completa: Engloba os problemas que estão em NP e que são NP-Difíceis ao mesmo tempo. Um exemplo é o problema do Subset
 Sum, onde é dada a descrição de um conjunto de valores e devemos descobrir se existe algum subconjunto deste conjunto cuja soma 
 resulte em um valor específico.
+
+10)
+Algoritmo polinomial não-determinístico do Clique (Versão de decisão): Dado um grafo G(V,E), existe um clique de tamanho K neste
+grafo?
+Entrada: Grafo G(V,E)
+Algoritmo:
+- Inicializar grafo "Instância" (O(1))
+- Para cada V em G(V,E): (O(V))
+-- Instrução não-determinística: Manter ou não V em "Instância"
+- Verificar se Instância possui K elementos
+-- Não: Rejeitar
+-- Sim: Verificar se Instância é um grafo completo (O(V^2))
+--- Não: Rejeitar
+--- Sim: Aceitar Instância como solução
+
+
