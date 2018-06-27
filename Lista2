@@ -421,11 +421,27 @@ Entrada: Grafo G(V,E)
 Algoritmo:
 - Inicializar grafo "Instância" (O(1))
 - Para cada V em G(V,E): (O(V))
--- Instrução não-determinística: Manter ou não V em "Instância"
+-- Instrução não-determinística: Manter ou não V em "Instância" O(1)
 - Verificar se Instância possui K elementos
 -- Não: Rejeitar
 -- Sim: Verificar se Instância é um grafo completo (O(V^2))
 --- Não: Rejeitar
 --- Sim: Aceitar Instância como solução
 
+O algoritmo acima possui custo O(V^2), ou seja, é polinomial, logo o problema Clique está em NP.
 
+
+Para reduzir o SAT ao Clique, geramos um grafo G onde cada cláusula "or" (x1 v x2 v ... v xj) é convertida em um conjunto de 
+vértices, Ci, onde Ci contém todas as variáveis da cláusula. As arestas são tais que todos os pares de vértices possuem uma aresta
+entre si, a menos que:
+1 - Ambos os elementos pertençam ao mesmo conjunto.
+2 - Um elemento seja igual à negação do outro. Ou seja, x1 e ~x1 não possuem uma aresta entre si.
+
+Algoritmo:
+- Gerar o grafo G conforme especificado (Custo O(V^2), onde V é o número de vértices em G)
+- Verificar se G possui algum clique de tamanho V (Custo polinomial).
+-- Se G possui algum clique, aceitar
+-- Senão, rejeitar
+
+O custo do algoritmo acima é polinomial, e reduz o SAT ao Clique. O motivo é que, se houver um Clique de tamanho V no grafo G gerado,
+podemos gerar uma solução para o SAT tal que cada elemento no Clique seja igualado a 1, resultando em 1 na expresão geral.
