@@ -399,20 +399,20 @@ ser provado como NP-Completo, e é frequentemente utilizado para provar a NP-Com
 
 b)
 Classe P: Problemas que podem ser resolvidos em tempo polinomial, ou seja, da forma O(n^k), onde k é uma constante. Um exemplo
-é o problema de buscar um elemento em um vetor não-ordenado, o que pode ser feito em O(n^1).
+é o problema de verificar se um elemento está em um vetor não-ordenado, o que pode ser feito em O(n^1).
 
-Classe NP: Problemas cujas soluções são verificáveis em tempo polinomial, mas que não necessariamente são resolvidos também em
-tempo polinomial de forma determinística. Como a classe P está contida em NP, podemos usar o mesmo exemplo de buscar um elemento
-em um vetor não-ordenado. A complexidade ainda é O(N), polinomial. Além disso, podemos verificar a corretude da nossa solução
-também em tempo polinomial (O(N^0) = O(1), ou O(N^1) = O(N), dependendo da nossa implementação). Logo, o problema também é NP.
+Classe NP: Problemas cujas soluções podem ser obtidas em tempo polinomial através de um algoritmo não-determinístico. Como a classe
+P está contida em NP, podemos usar o mesmo exemplo de buscar um elemento em um vetor não-ordenado, ou podemos usar um exemplo
+que possivelmente não está em P, como o problema do Subset Sum, onde é dada a descrição de um conjunto de valores e devemos descobrir 
+se existe algum subconjunto deste conjunto cuja soma resulte em um valor específico.
+
 
 Classe NP-Difícil: Engloba os problemas PB tais que todo problema em NP possa ser reduzido a PB em tempo polinomial. Alguns deles
 nem sequer são decidíveis. Um exemplo é o problema da parada, onde é dada a descrição de um programa, e uma entrada para este
 programa, e deve-se decidir se o programa vai parar ou não para esta entrada.
 
 Classe NP-Completa: Engloba os problemas que estão em NP e que são NP-Difíceis ao mesmo tempo. Um exemplo é o problema do Subset
-Sum, onde é dada a descrição de um conjunto de valores e devemos descobrir se existe algum subconjunto deste conjunto cuja soma 
-resulte em um valor específico.
+Sum, que é NP e NP-Difícil ao mesmo tempo.
 
 10)
 Algoritmo polinomial não-determinístico do Clique (Versão de decisão): Dado um grafo G(V,E), existe um clique de tamanho K neste
